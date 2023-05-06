@@ -1,0 +1,49 @@
+version: '3'
+services:
+  
+  webapp:
+    container_name: webapp
+    build: ./backend/rest-server
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    networks:
+      - internal-network
+
+  keycloak:
+    container_name: idp
+    image: quay.io/keycloak/keycloak:21.0.2
+    ports:
+      - "8180:8080"
+    restart: unless-stopped
+    environment:
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin123
+      KC_DB: mariadb
+      KC_DB_URL: jdbc:mariadb://idp-db:3306/keycloak_db
+      KC_DB_USERNAME: keycloak_user
+      KC_DB_PASSWORD: keycloak_password
+    networks:
+      - internal-network
+    command: start-dev
+  
+  keycloak_db:
+    container_name: idp-db
+    image: mariadb:10.7.8
+    restart: unless-stopped
+    environment:
+      MARIADB_USER: keycloak_user
+      MARIADB_PASSWORD: keycloak_password
+      MARIADB_DATABASE: keycloak_db
+      MARIADB_ROOT_PASSWORD: root_password
+    volumes:
+      - keycloak-db:/var/lib/mysql
+    networks:
+      - internal-network
+
+networks:
+  internal-network:
+
+volumes:
+  keycloak-db:
+  ad-db:
