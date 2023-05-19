@@ -12,7 +12,7 @@ export default defineConfig({
     }
   },
   build: {
-    outDir: '../backend/rest-server/src/main/resources/META-INF/resources'
+    outDir: '../backend/src/main/resources/META-INF/resources'
   },
   css: {
     devSourcemap: false,
