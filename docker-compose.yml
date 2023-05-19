@@ -3,7 +3,7 @@ services:
   
   webapp:
     container_name: webapp
-    build: ./backend/rest-server
+    build: ./backend
     restart: unless-stopped
     ports:
       - "8080:8080"
@@ -23,9 +23,11 @@ services:
       KC_DB_URL: jdbc:mariadb://idp-db:3306/keycloak_db
       KC_DB_USERNAME: keycloak_user
       KC_DB_PASSWORD: keycloak_password
+    volumes:
+      - ./keycloak:/opt/keycloak/data/import
     networks:
       - internal-network
-    command: start-dev
+    command: "start-dev --import-realm"
   
   keycloak_db:
     container_name: idp-db
@@ -46,4 +48,3 @@ networks:
 
 volumes:
   keycloak-db:
-  ad-db:

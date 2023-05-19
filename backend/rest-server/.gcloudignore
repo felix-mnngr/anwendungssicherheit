@@ -1,5 +1,0 @@
-*
-!Dockerfile
-!app.yaml
-!target/
-!*.pem
