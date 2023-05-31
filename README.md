@@ -1,4 +1,5 @@
 # anwendungssicherheit
+Clone: `git clone https://github.com/felix-mnngr/anwendungssicherheit.git`
 
 ## Systemanforderungen
 1. [Docker](https://docs.docker.com/get-docker/)
@@ -7,7 +8,7 @@
 4. [Node.js (inkl. npm)](https://nodejs.org/de)
 
 ## Build 
-Alle Befehle beziehen sich auf das Projekt-Root-Verzeichnis
+Alle Befehle beziehen sich auf das Projekt-Root-Verzeichnis und sind für Bash (Linux) oder CMD (Windows)
 1. Install npm packages: `npm install --prefix frontend`
 2. Build Webapp Frontend: `npm run build --prefix frontend`
 3. Build Webapp Backend: `cd backend && quarkus build --no-tests && cd ..`
