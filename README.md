@@ -1,9 +1,10 @@
 # anwendungssicherheit
 
 ## Systemanforderungen
-1. Docker
-2. Quarkus CLI
-3. Node.js (inkl. npm)
+1. [Docker](https://docs.docker.com/get-docker/)
+2. [Java (JRE)](https://www.java.com/de/download/manual.jsp)
+3. [Quarkus CLI](https://quarkus.io/get-started/)
+4. [Node.js (inkl. npm)](https://nodejs.org/de)
 
 ## Build 
 Alle Befehle beziehen sich auf das Projekt-Root-Verzeichnis
@@ -16,6 +17,8 @@ Alle Befehle beziehen sich auf das Projekt-Root-Verzeichnis
 Nach dem initialen Start muss in der Keycloak [Admin-Console](http://localhost:8180/admin/master/console/#/anwendungssicherheit/users) ein User für das Realm _anwendungssicherheit_ angelegt werden. Anschließend kann dieser Benutzer zur Authentifizierung in der [Webapp](http://localhost:8080/) genutzt werden. 
 
 ## Troubleshouting
+Build Errors: Nach der Neuinstallation von Docker, Java, Quarkus und Node.js sollte der PC neugestartet werden.
+
 HTTP Status 401: 
 - Seite neuladen
 - Seite mit http://localhost:8080/ statt http://localhost:8080 aufrufen
