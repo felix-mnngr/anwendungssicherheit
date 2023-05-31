@@ -15,8 +15,9 @@ Alle Befehle beziehen sich auf das Projekt-Root-Verzeichnis und sind für Bash (
 4. Start Docker Compose: `docker-compose up -d --build`
 
 ## Keycloak Admin
-Benutzername: admin
-Passwort: admin123
+- **Benutzername:** admin
+- **Passwort:** admin123
+
 Benutzername und Passwort können im docker-compose.yml geändert werden.
 
 ## Konfiguration
