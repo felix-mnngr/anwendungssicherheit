@@ -7,9 +7,10 @@
 
 ## Build 
 Alle Befehle beziehen sich auf das Projekt-Root-Verzeichnis
-1. Build Webapp Frontend: `npm run build --prefix frontend`
-2. Build Webapp Backend: `cd backend && quarkus build --no-tests && cd ..`
-3. Start Docker Compose: `docker-compose up -d --build`
+1. Install npm packages: `npm install --prefix frontend`
+2. Build Webapp Frontend: `npm run build --prefix frontend`
+3. Build Webapp Backend: `cd backend && quarkus build --no-tests && cd ..`
+4. Start Docker Compose: `docker-compose up -d --build`
 
 ## Konfiguration
 Nach dem initialen Start muss in der Keycloak [Admin-Console](http://localhost:8180/admin/master/console/#/anwendungssicherheit/users) ein User für das Realm _anwendungssicherheit_ angelegt werden. Anschließend kann dieser Benutzer zur Authentifizierung in der [Webapp](http://localhost:8080/) genutzt werden. 
