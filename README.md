@@ -26,6 +26,11 @@ Nach dem initialen Start muss in der Keycloak [Admin-Console](http://localhost:8
 ## Troubleshouting
 Build Errors: Nach der Neuinstallation von Docker, Java, Quarkus und Node.js sollte der PC neugestartet werden.
 
+Docker Probleme: 
+1. Compose entfernen: `docker-compose down`
+2. Volumes löschen: `docker volume prune`
+3. Compose starten: `docker-compose up -d`
+
 HTTP Status 401: 
 - Seite neuladen
 - Seite mit http://localhost:8080/ statt http://localhost:8080 aufrufen
